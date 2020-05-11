@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/main.css')}" />
+<br>
+Вы хотите купить {{product.title}}, за {{product.cost}}?
+<br>
+                            <div>
+                                <form class="login_form" method="post">
+                                    <input type="tel" class="form-control" id="tel" aria-describedby="emailHelp" placeholder="Введите номер телефона" name="tel">
+                                    <button type="submit" class="btn btn-primary">Продолжить</button>
+                                </form>
+                            </div>
+{% endblock %}

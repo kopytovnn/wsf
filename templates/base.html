@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Телефоны СНГ</title>
+    <link rel="stylesheet"
+          href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+          integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="static/css/main.css" >
+
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-light menu">
+            <img width="75" height="75" src="http://127.0.0.1:8080/static/img/logo.png" alt="Card image cap">
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                      <a class="nav-link text-dark" href="/home">Home</a>
+              </li>
+              <li class="nav-item">
+                        <a class="nav-link text-dark" href="/aboutus">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="/favorite">Favorite</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+<footer class="for_footer">
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-light">
+      <a class="nav-link" href="https://vk.com/club194406021">Vk</a>
+      <a class="nav-link" href="#">Inst</a>
+      <a class="nav-link" href="#">Facebook</a>
+    </nav>
+</footer>
+</html>

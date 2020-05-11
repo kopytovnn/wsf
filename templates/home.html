@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/main.css')}" />
+
+{% for products in all_products%}
+
+        <div class="container">
+          <div class="row">
+              {% for product in products%}
+
+              <script type=text/javascript>
+                        $(function() {
+                          $('a#{{product.id}}').bind('click', function() {
+                            $.getJSON('/add_in_favourites/{{product.id}}',
+                                function(data) {
+                              //do nothing
+                            });
+                            return false;
+                          });
+                        });
+                </script>
+                <div class="col-sm for_card1">
+                    <br>
+                      <div class="card" style="width: 18rem;">
+                          <p class="card-text"><h3 align="center">{{product.title[:20]}}</h3></p>
+                          <img class="card-img-top" width="100" height="300" src="static/img/{{product.photos}}" alt="Card image cap">
+                          <div class="card-body">
+                            <p class="card-text">{{product.information[:160]}}</p>
+                            <p class="card-text">{{product.cost[:160]}}</p>
+                            <a class="btn btn-primary" href="home/product/{{product.id}}" role="button">About</a>
+                            <div>
+                                    <form>
+                                        <a href=# id={{product.id}}><button class='btn btn-primary'>Add in favourites</button></a>
+                                    </form>
+                            </div>
+
+                          </div>
+                    </div>
+                </div>
+              {% endfor %}
+          </div>
+        </div>
+        <br>
+    {% endfor %}
+{% endblock %}

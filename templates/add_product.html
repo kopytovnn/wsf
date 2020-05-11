@@ -1,0 +1,32 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<h1>Add a new product:</h1>
+                                <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/main.css')}" />
+                                <form class="login_form" method="post" enctype="multipart/form-data">
+
+                                    <div class="form-group">
+                                        <label for="title">Title</label>
+                                        <textarea class="form-control" id="title" rows="1" name="title"></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="cost">Cost</label>
+                                        <textarea class="form-control" id="cost" rows="1" name="cost"></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="info">Info about the product</label>
+                                        <textarea class="form-control" id="info" rows="3" name="info"></textarea>
+                                    </div>
+
+                               <div class="form-group">
+                                    <label for="photo">Выберите файл</label>
+                                    <input type="file" class="form-control-file" id="photo" name="file">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Отправить</button>
+
+                                </form>
+{% endblock %}
