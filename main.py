@@ -213,6 +213,11 @@ def checkout(id):
         return redirect("https://money.yandex.ru/quickpay/confirm.xml")
 
 
+@app.route('/aboutus')
+def aboutus():
+    return render_template("aboutus.html")
+
+
 @app.errorhandler(404)
 def not_found(error):
     return render_template("error.html")
