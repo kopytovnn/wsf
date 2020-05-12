@@ -24,13 +24,17 @@ ADMINS = ['ncopitovflaskmail@yandex.ru']
 
 
 def send(id, tel):
-    if not tel:
-        return "Error"
-    msg = Message('Покупатель {tel} приобрел {id}'.format(
-                  tel=str(tel),
-                  id=str(id)),
-                  sender=ADMINS[0],
-                  recipients=ADMINS)
-    with app.app_context():
-        mail.send(msg)
-    return "success"
+    try:
+        if not tel:
+            return "Error"
+        msg = Message('Покупатель {tel} приобрел {id}'.format(
+                      tel=str(tel),
+                      id=str(id)),
+                      sender=ADMINS[0],
+                      recipients=ADMINS)
+        with app.app_context():
+            mail.send(msg)
+        return "success"
+
+    except BaseException:
+        pass
